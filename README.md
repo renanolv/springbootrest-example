@@ -1,5 +1,12 @@
-# SpringBootRestExample
+# Spring Boot Example
 
+## Dependencies
+
+* SpringBoot 1.5.3
+* Maven
+* MySQL
+* JPA
+* Hibernate
 
 ## Setting up Mariadb on Docker
 
