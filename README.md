@@ -29,6 +29,7 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 
 ## Task List
 - [x] SpringBoot
+- [ ] Spring Rest Docs
 - [x] Database
 - [ ] Kafka
 
