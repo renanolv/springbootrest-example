@@ -1,6 +1,6 @@
 # Spring Boot Rest API - Example
 
-A Rest API using Spring Boot with a simple CRUD actions like POST,GET,DELETE and PUT.
+A Rest API using Spring Boot with a simple CRUD actions like *POST,GET,DELETE* and *PUT*.
 
 ## Dependencies
 
