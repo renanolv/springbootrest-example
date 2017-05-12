@@ -1,18 +1,18 @@
 # SpringBootRestExample
 
 
-##Setting up Mariadb on Docker
+## Setting up Mariadb on Docker
 
-docker run -d \
+' docker run -d \
 --restart=always \
 --name mariadb \
 -p 3306:3306 \
 -v /etc/localtime:/etc/localtime:ro \
 -v /storage/mariadb:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=root \
-mariadb:latest
+mariadb:latest '
 
-##Setting up PhpAdmin on Docker
+## Setting up PhpAdmin on Docker
 
 docker run --name myadmin -d \
 --restart=always \
