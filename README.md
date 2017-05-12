@@ -28,7 +28,7 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 |Properties Files | [application.properties](https://github.com/renancetauro/SpringBootRestExample/blob/master/src/main/resources/application.properties)
 
 ## Task List
-    - [x] SpringBoot
-    - [x] Database
-    - [ ] Kafka
+- [x] SpringBoot
+- [x] Database
+- [ ] Kafka
 
