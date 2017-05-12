@@ -1,4 +1,4 @@
-# Spring Boot Example
+# Spring Boot Rest API - Example
 
 ## Dependencies
 
