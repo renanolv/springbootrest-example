@@ -20,4 +20,9 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 
 `docker run --name myadmin -d \ --restart=always \ -v /etc/localtime:/etc/localtime:ro \ --link mariadb:db  \ -p 8181:80 \ phpmyadmin/phpmyadmin*`
 
+## Configuration
 
+|Spring Boot Configuration | Class or Java property files  |
+|--------------------------|---|
+|The Main Class | [EmployeeApplication](https://github.com/renancetauro/SpringBootRestExample/blob/master/src/main/java/employee/EmployeeApplication.java) |
+|Properties Files | [application.properties](https://github.com/renancetauro/SpringBootRestExample/blob/master/src/main/resources/application.properties)
