@@ -27,8 +27,3 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 |The Main Class | [EmployeeApplication](https://github.com/renancetauro/SpringBootRestExample/blob/master/src/main/java/employee/EmployeeApplication.java) |
 |Properties Files | [application.properties](https://github.com/renancetauro/SpringBootRestExample/blob/master/src/main/resources/application.properties)
 
-## Running this example with Postman
-```
-  
-```
-
