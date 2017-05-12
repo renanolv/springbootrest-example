@@ -14,10 +14,7 @@ This examples provides a Rest API using Spring Boot with HTTP methods like *POST
 
 ### Start Mariadb on Docker
 
-```
-docker run -d \ --restart=always \ --name mariadb \ -p 3306:3306 \ -v /etc/localtime:/etc/localtime:ro \ -v      /storage/mariadb:/var/lib/mysql \ -e MYSQL_ROOT_PASSWORD=root \ mariadb:latest
-
-```
+```docker run -d \ --restart=always \ --name mariadb \ -p 3306:3306 \ -v /etc/localtime:/etc/localtime:ro \ -v      /storage/mariadb:/var/lib/mysql \ -e MYSQL_ROOT_PASSWORD=root \ mariadb:latest```
 
 ### Start PhpAdmin on Docker
 
