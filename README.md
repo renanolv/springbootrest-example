@@ -1,6 +1,6 @@
 # Spring Boot Rest API - Example
 
-A Rest API using Spring Boot with a simple CRUD actions like *POST, GET, DELETE* and *PUT*.
+This examples providades a Rest API using Spring Boot with HTTP methods like *POST, GET, DELETE* and *PUT*.
 
 ## Maven Dependencies
 
@@ -16,3 +16,5 @@ A Rest API using Spring Boot with a simple CRUD actions like *POST, GET, DELETE*
 ### Setting up PhpAdmin on Docker
 
 *docker run --name myadmin -d \ --restart=always \ -v /etc/localtime:/etc/localtime:ro \ --link mariadb:db  \ -p 8181:80 \ phpmyadmin/phpmyadmin*
+
+## 
