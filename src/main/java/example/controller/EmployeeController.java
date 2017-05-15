@@ -57,6 +57,7 @@ public class EmployeeController {
     String delete(@PathVariable Long id) {
         Employee employee = new Employee(id);
         employeeRepository.delete(employee);
+        producer.receiver(employee);
 
         return "Deleted employee with id: " + employee.getID();
     }
@@ -70,6 +71,8 @@ public class EmployeeController {
         employee.setEmail(email);
         employee.setSalary(salary);
         employeeRepository.save(employee);
+        producer.receiver(employee);
+        
 
         return employeeRepository.findOne(id);
     }
