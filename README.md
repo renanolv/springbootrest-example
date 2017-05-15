@@ -20,6 +20,7 @@ First, build the application
 Next, launch the services using Docker...
 
 *Landoop Kafka Development Environment*
+
 ``docker run -d \
 --restart=always \
 --name=kafka \
@@ -29,6 +30,7 @@ Next, launch the services using Docker...
 landoop/fast-data-dev:latest``
 
 *Mariadb*
+
 ``docker run -d \
 --restart=always \
 --name mariadb \
@@ -39,6 +41,7 @@ landoop/fast-data-dev:latest``
 mariadb:latest``
 
 *PhpAdmin (Optional)*
+
 ``docker run --name myadmin -d \
 --restart=always \
 -v /etc/localtime:/etc/localtime:ro \
