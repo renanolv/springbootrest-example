@@ -58,7 +58,7 @@ phpmyadmin/phpmyadmin``
 - [x] SpringBoot
 - [x] Database
 - [ ] Spring Rest Docs
-- [ ] Kafka
+- [X] Kafka
 - [ ] JWT
 
 ## Kafka Development Environment with Landoop
