@@ -11,17 +11,22 @@ import javax.annotation.PostConstruct;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author renan
  */
+@Service
+@ConditionalOnProperty(name = "kafka.enabled", matchIfMissing = true)
 public class KafkaConsumer {
 
-    @Value("${kafka.broker.adress}")
+    @Value("${kafka.broker.address}")
     private String brokerAddress;
 
     @Value("${topic}")
@@ -39,14 +44,13 @@ public class KafkaConsumer {
 
         props.put("bootstrap.servers", brokerAddress);
 
-        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put("key.deserializer", StringDeserializer.class.getName());
+        props.put("value.deserializer", StringDeserializer.class.getName());
         
         props.put("group.id", "employee");
         props.put("retries", "1");
         props.put("linger.ms", 5);
-        props.setProperty("enable.auto.commit", "false");
-        
+        props.setProperty("enable.auto.commit", "false");  
         props.setProperty("auto.offset.reset", "earliest");
 
     }
