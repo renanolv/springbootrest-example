@@ -8,6 +8,7 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 * MySQL
 * JPA
 * Hibernate
+* Kafka
 
 
 ## Setting up Docker Environment
@@ -32,4 +33,4 @@ Next, launch the services using Docker Compose:
 - [ ] Spring Rest Docs
 - [x] Database
 - [ ] Kafka
-
+- [ ] JWT
