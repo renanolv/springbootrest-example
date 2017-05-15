@@ -28,6 +28,10 @@ public class KafkaProducer {
     private Producer<String, String> producer;
 
     JSONSerializer json = new JSONSerializer();
+    
+    public KafkaProducer() {
+        json.exclude("*.class");
+    }
 
     @PostConstruct
     public void init() {
@@ -48,7 +52,6 @@ public class KafkaProducer {
 
         ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, employee.getID().toString(), json.serialize(employee));
         producer.send(producerRecord);
-
 
     }
 
