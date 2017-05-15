@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
-
 /**
  *
  * @author renan
  */
+
 @Service
 @ConditionalOnProperty(name = "kafka.enabled", matchIfMissing = true)
 public class KafkaProducer {
