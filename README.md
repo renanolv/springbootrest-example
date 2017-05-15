@@ -12,11 +12,7 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 
 ## Setting up the environment
 
-`` 
-docker-compose -f dockerfile.yml build
-
-``
-
+``docker-compose -f dockerfile.yml build``
 
 ## Configuration
 
