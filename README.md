@@ -69,6 +69,6 @@ phpmyadmin/phpmyadmin``
 
 *Creating a topic*
 
-``kafk-topics --zookeeper 127.0.0.1:2181 --create --topic first_topic --partition 3 --replication-factor 1``
+``kafk-topics --zookeeper 127.0.0.1:2181 --create --topic employee --partition 3 --replication-factor 1``
 
 *Find more in [Landoop Documentation](https://github.com/Landoop/fast-data-dev/)*
