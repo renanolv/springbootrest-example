@@ -56,7 +56,17 @@ phpmyadmin/phpmyadmin``
 
 ## Task List
 - [x] SpringBoot
-- [ ] Spring Rest Docs
 - [x] Database
+- [ ] Spring Rest Docs
 - [ ] Kafka
 - [ ] JWT
+
+## Kafka Development Environment with Landoop
+
+*Running Kafka CLI*
+
+``docker run --rm -it --net=host landoop/fast-data-dev bash``
+
+*Creating a topic*
+
+``kafk-topics --zookeeper 127.0.0.1:2181 --create --topic first_topic --partition 3 --replication-factor 1``
