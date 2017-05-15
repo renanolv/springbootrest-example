@@ -10,9 +10,15 @@ This example provides a Rest API using Spring Boot with HTTP methods like *POST,
 * Hibernate
 
 
-## Setting up the environment
+## Setting up Docker Environment
 
-``docker-compose -f dockerfile.yml build``
+First, build the application
+
+``./mvnw clean install -e ``
+
+Next, launch the services using Docker Compose:
+
+`` docker-compose -f dockerfile.yml build ``
 
 ## Configuration
 
