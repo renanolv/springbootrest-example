@@ -1,6 +1,6 @@
-package employee.repository;
+package example.repository;
 
-import employee.model.Employee;
+import example.model.Employee;
 import javax.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 

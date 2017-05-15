@@ -1,6 +1,6 @@
-package employee.controller;
+package example.controller;
 
-import employee.model.Employee;
+import example.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import employee.repository.EmployeeRepository;
+import example.repository.EmployeeRepository;
 
 @RestController
 @RequestMapping(path = "/employee")
