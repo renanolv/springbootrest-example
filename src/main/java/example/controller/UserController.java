@@ -6,7 +6,6 @@
 package example.controller;
 
 import example.model.User;
-import example.repository.UserRepository;
 import example.service.AccountService;
 import example.service.SecretService;
 import example.service.UserService;
@@ -22,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import validator.UserValidator;
+import example.validator.UserValidator;
 
 /**
  *
@@ -34,8 +33,8 @@ import validator.UserValidator;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
-
+    private UserValidator userValidator;
+    
     @Autowired
     SecretService secretService;
 
@@ -44,9 +43,6 @@ public class UserController {
 
     @Autowired
     AccountService accountService;
-
-    @Autowired
-    private UserValidator userValidator;
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {

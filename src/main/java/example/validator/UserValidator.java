@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package validator;
+package example.validator;
 
 import example.model.User;
 import example.service.UserService;
@@ -38,7 +38,7 @@ public class UserValidator implements Validator {
             errors.rejectValue("username", "Size.userForm.username");
         }
         
-        if (userService.findByUsername(user.getUserName()) != null) {
+        if (userService.findByUserName(user.getUserName()) != null) {
             errors.rejectValue("username", "Duplicate.userForm.username");
         }
 
