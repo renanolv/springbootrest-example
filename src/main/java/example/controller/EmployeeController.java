@@ -36,7 +36,7 @@ public class EmployeeController {
 
             employee = new Employee(name, email, salary);
             employeeRepository.save(employee);
-            producer.receiver(employee);
+            producer.receiveEmployee(employee);
 
         } catch (Exception ex) {
             return "Error creating the employee: " + ex.toString();
@@ -57,7 +57,7 @@ public class EmployeeController {
     String delete(@PathVariable Long id) {
         Employee employee = new Employee(id);
         employeeRepository.delete(employee);
-        producer.receiver(employee);
+        producer.receiveEmployee(employee);
 
         return "Deleted employee with id: " + employee.getID();
     }
@@ -71,7 +71,7 @@ public class EmployeeController {
         employee.setEmail(email);
         employee.setSalary(salary);
         employeeRepository.save(employee);
-        producer.receiver(employee);
+        producer.receiveEmployee(employee);
         
 
         return employeeRepository.findOne(id);

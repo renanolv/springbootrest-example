@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package example.model;
 
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author renan
  */
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -30,28 +32,16 @@ public class User {
     @NotNull
     private String password;
    
-    @NotNull
-    private String passwordConfirm;
     
     public User(Long id) {
         this.id = id;
     }
     
-    public User(String userName, String password, String passwordConfirm) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.passwordConfirm = passwordConfirm;
         
     } 
-
-    public String getPasswordConfirm() {
-        return passwordConfirm;
-    }
-
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
-    }
-    
     
     public Long getId() {
         return id;

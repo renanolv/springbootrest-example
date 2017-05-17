@@ -1,6 +1,7 @@
 package example.service;
 
 import example.model.Employee;
+import example.model.User;
 import flexjson.JSONSerializer;
 import java.util.Properties;
 import javax.annotation.PostConstruct;
@@ -22,13 +23,13 @@ public class KafkaProducer {
     @Value("${kafka.broker.address}")
     private String brokerAddress;
 
-    @Value("${topic}")
-    private String topic;
-
     private Producer<String, String> producer;
 
+    private String topic;
+   
+
     JSONSerializer json = new JSONSerializer();
-    
+
     public KafkaProducer() {
         json.exclude("*.class");
     }
@@ -48,9 +49,20 @@ public class KafkaProducer {
         producer = new org.apache.kafka.clients.producer.KafkaProducer<>(props);
     }
 
-    public void receiver(Employee employee) {
+    public void receiveEmployee(Employee employee) {
+
+        topic = "employee";
 
         ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, employee.getID().toString(), json.serialize(employee));
+        producer.send(producerRecord);
+
+    }
+
+    public void receiveUser(User user) {
+
+        topic = "user";
+
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, user.getId().toString(), json.serialize(user));
         producer.send(producerRecord);
 
     }

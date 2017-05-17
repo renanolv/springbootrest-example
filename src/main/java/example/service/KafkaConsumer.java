@@ -29,8 +29,9 @@ public class KafkaConsumer {
     @Value("${kafka.broker.address}")
     private String brokerAddress;
 
-    @Value("${topic}")
-    private String topic;
+    private String topic = "employee";
+    
+    private String topic2 = "user";
 
     private Properties props;
     private Consumer<String, String> consumer;
@@ -46,8 +47,7 @@ public class KafkaConsumer {
 
         props.put("key.deserializer", StringDeserializer.class.getName());
         props.put("value.deserializer", StringDeserializer.class.getName());
-        
-        props.put("group.id", "employee");
+        props.put("group.id", "registers");
         props.put("retries", "1");
         props.put("linger.ms", 5);
         props.setProperty("enable.auto.commit", "false");  
@@ -60,7 +60,8 @@ public class KafkaConsumer {
         log.info("Starting consumer... ");
 
         consumer = new org.apache.kafka.clients.consumer.KafkaConsumer<>(props);
-        consumer.subscribe(Collections.singletonList(topic));
+        consumer.subscribe(Collections.singleton(topic));
+         consumer.subscribe(Collections.singleton(topic2));
 
         while (true) {
 
