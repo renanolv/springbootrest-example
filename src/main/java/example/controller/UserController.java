@@ -6,11 +6,13 @@
 package example.controller;
 
 import example.model.User;
+import example.repository.UserRepository;
 import example.service.KafkaProducer;
 import example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,9 +30,12 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    
+
     @Autowired
     private KafkaProducer kafkaProducer;
+
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model) {
@@ -43,7 +48,7 @@ public class UserController {
         User user = null;
 
         try {
-            
+
             user = new User(userName, password);
             userService.save(user);
             kafkaProducer.receiveUser(user);
@@ -54,12 +59,30 @@ public class UserController {
         return "Account succesfully createad! ";
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    String login(@RequestParam("username") String userName, @RequestParam("password") String password) {
+    User findOne(@PathVariable("id") Long id) {
+        return userRepository.findOne(id);
+    }
 
-        return "redirect:welcome";
+    @RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody
+    String delete(@PathVariable Long id) {
+        User user = new User(id);
+        userRepository.delete(user);
 
+        return "Deleted employee with id: " + user.getId();
+    }
+
+    @RequestMapping(path = "/update/{id}", method = RequestMethod.PUT)
+    public @ResponseBody
+    User update(@PathVariable("id") Long id, @RequestParam("name") String name) {
+
+        User user = userRepository.findOne(id);
+        user.setUserName(name);
+        userRepository.save(user);
+
+        return userRepository.findOne(id);
     }
 
 }

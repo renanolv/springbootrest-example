@@ -28,10 +28,8 @@ public class KafkaConsumer {
 
     @Value("${kafka.broker.address}")
     private String brokerAddress;
-
-    private String topic = "employee";
     
-    private String topic2 = "user";
+    private String topic = "user";
 
     private Properties props;
     private Consumer<String, String> consumer;
@@ -61,7 +59,6 @@ public class KafkaConsumer {
 
         consumer = new org.apache.kafka.clients.consumer.KafkaConsumer<>(props);
         consumer.subscribe(Collections.singleton(topic));
-         consumer.subscribe(Collections.singleton(topic2));
 
         while (true) {
 

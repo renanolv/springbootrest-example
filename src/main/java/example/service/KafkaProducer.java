@@ -1,6 +1,6 @@
 package example.service;
 
-import example.model.Employee;
+
 import example.model.User;
 import flexjson.JSONSerializer;
 import java.util.Properties;
@@ -47,15 +47,6 @@ public class KafkaProducer {
         props.put("linger.ms", 1);
 
         producer = new org.apache.kafka.clients.producer.KafkaProducer<>(props);
-    }
-
-    public void receiveEmployee(Employee employee) {
-
-        topic = "employee";
-
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(topic, employee.getID().toString(), json.serialize(employee));
-        producer.send(producerRecord);
-
     }
 
     public void receiveUser(User user) {

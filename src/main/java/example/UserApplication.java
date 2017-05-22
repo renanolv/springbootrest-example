@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class EmployeeApplication {
+public class UserApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(EmployeeApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(UserApplication.class, args);
         
         
         boolean shouldConsume = context.getEnvironment().getProperty("kafka.consumer.enabled", Boolean.class, Boolean.TRUE);
