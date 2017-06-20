@@ -39,5 +39,5 @@ phpmyadmin/phpmyadmin``
 
 |Spring Boot Configuration | Class or Java property files  |
 |--------------------------|---|
-|The Main Class | [EmployeeApplication](https://github.com/renancetauro/spring-boot-restapi/blob/master/src/main/java/example/CustomerApplication.java) |
+|The Main Class | [CustomerApplication](https://github.com/renancetauro/spring-boot-restapi/blob/master/src/main/java/example/CustomerApplication.java) |
 |Properties Files | [application.properties](https://github.com/renancetauro/spring-boot-restapi/blob/master/src/main/resources/application.properties)
