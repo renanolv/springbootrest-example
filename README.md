@@ -1,14 +1,13 @@
 # Spring Boot Rest API - Example
 
-This example provides a Rest API using Spring Boot with HTTP methods like *POST, GET, DELETE* and *PUT*.
+Simple example of a Rest API using Spring Boot with these following HTTP methods : *POST, GET, DELETE* and *PUT*.
 
 ## Maven Dependencies
 
-* SpringBoot 1.5.3
+* SpringBoot 1.5.4
 * MySQL
 * JPA
 * Hibernate
-* Kafka
 
 
 ## Setting up environment with Docker
@@ -58,8 +57,6 @@ phpmyadmin/phpmyadmin``
 - [x] SpringBoot
 - [x] Database
 - [ ] Spring Rest Docs
-- [X] Kafka
-- [ ] JWT
 
 ## Kafka Development Environment with Landoop
 
