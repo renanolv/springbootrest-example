@@ -5,7 +5,7 @@
  */
 package example.repository;
 
-import example.model.User;
+import example.model.Customer;
 import javax.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 
@@ -14,9 +14,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author renan
  */
 @Transactional
-public interface UserRepository extends CrudRepository<User, Long> {
-    
-    User findByUserName(String userName);
-    
-   
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
+
 }
