@@ -1,6 +1,6 @@
 # Spring Boot Rest API - Example
 
-Simple example of a Rest API using Spring Boot with these following HTTP methods : *POST, GET, DELETE* and *PUT*.
+Simple example of a Spring Boot Rest application with some CRUD operations.
 
 ## Maven Dependencies
 
@@ -8,7 +8,6 @@ Simple example of a Rest API using Spring Boot with these following HTTP methods
 * MySQL
 * JPA
 * Hibernate
-
 
 ## Setting up environment with Docker
 
