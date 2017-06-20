@@ -35,7 +35,7 @@ mariadb:latest``
 -p 8181:80 \
 phpmyadmin/phpmyadmin``
 
-## Configuration
+## Other
 
 |Spring Boot Configuration | Class or Java property files  |
 |--------------------------|---|
