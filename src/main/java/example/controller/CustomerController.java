@@ -23,17 +23,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/v1/customer")
 @CrossOrigin(origins = "*")
 public class CustomerController {
-    
-    @Autowired
-    private CustomerService customerService;
 
-    public CustomerController() {
-    }
+    @Autowired
+    CustomerService customerService;
 
     //Create customer method
     @RequestMapping(path = "/create", method = RequestMethod.POST)
-    public String createUser(@RequestParam("firstName") String firstName, @RequestParam("secondName") String secondName) {
-        return customerService.createUser(firstName, secondName);
+    public String createCustomer(@RequestParam("firstName") String firstName, @RequestParam("secondName") String secondName) {
+        return customerService.createCustomer(firstName, secondName);
     }
     //Find by customer id method
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)

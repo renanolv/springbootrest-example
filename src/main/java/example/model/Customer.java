@@ -32,7 +32,10 @@ public class Customer {
 
     @NotNull
     private String secondName;
-    
+
+    public Customer() {
+    }
+
     public Customer(Long id) {
         this.id = id;
     }
@@ -66,34 +69,5 @@ public class Customer {
         this.secondName = secondName;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" + "id=" + id + ", firstName=" + firstName + ", secondName=" + secondName + '}';
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Customer other = (Customer) obj;
-        if (!Objects.equals(this.firstName, other.firstName)) {
-            return false;
-        }
-        if (!Objects.equals(this.secondName, other.secondName)) {
-            return false;
-        }
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-    
     
 }

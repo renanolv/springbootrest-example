@@ -13,7 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author renan
  */
-@Transactional
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
 }

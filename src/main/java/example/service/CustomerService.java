@@ -6,6 +6,7 @@
 package example.service;
 
 import example.model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import example.repository.CustomerRepository;
 import flexjson.JSONSerializer;
@@ -18,26 +19,22 @@ public class CustomerService {
 
     JSONSerializer json = new JSONSerializer();
 
-    public CustomerService() {
-    }
-    
     CustomerRepository customerRepository;
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
     //
-    public String createUser(String firstName, String secondName) {
-        Customer customer = null;
+    public String createCustomer(String firstName, String secondName) {
+        Customer customer = new Customer(firstName, secondName);
         try {
-            customer = new Customer(firstName, secondName);
             customerRepository.save(customer);
         } catch (Exception ex) {
             return json.serialize(ex.getMessage().toString());
         }
         return json.serialize(customer);
     }
-    //
+
     public Customer findOne(Long id) {
         return customerRepository.findOne(id);
     }
@@ -50,7 +47,7 @@ public class CustomerService {
         }
         return ("{\"status\" : \"200\", \"description\" : \"user with id {} deleted\"}"+id);
     }
-    //
+
     public String update(Long id, String firstName) {
         try {
             Customer customer = customerRepository.findOne(id);
